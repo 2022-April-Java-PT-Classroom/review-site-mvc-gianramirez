@@ -15,15 +15,14 @@ public class Review {
     private String reviewCategory;
     private String content;
     private String country;
-    private String strength;
 
-    public Review(String title, String imageUrl, String reviewCategory, String content, String country, String strength) {
+    public Review(Long id, String title, String imageUrl, String reviewCategory, String content, String country) {
+        this.id = id;
         this.title = title;
         this.imageUrl = imageUrl;
         this.reviewCategory = reviewCategory;
         this.content = content;
         this.country = country;
-        this.strength = strength;
     }
 
     public Review() {
@@ -53,7 +52,4 @@ public class Review {
         return country;
     }
 
-    public String getStrength() {
-        return strength;
-    }
 }
