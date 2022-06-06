@@ -10,9 +10,12 @@ import org.wecancoeit.reviews.controller.ReviewController;
 import org.wecancoeit.reviews.model.Review;
 import org.wecancoeit.reviews.repo.ReviewRepository;
 
+import java.util.Arrays;
+import java.util.Collection;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 
 @WebMvcTest(ReviewController.class)
@@ -35,6 +38,26 @@ public class ReviewControllerMvcTest {
     public void shouldBeOkForAllReviewsInTheReviewsTemplate() throws Exception {
         mockMvc.perform(get("/reviews")).andExpect(status().isOk())
                 .andExpect(view().name("reviewsTemplate"));
+    }
+
+    @Test
+    public void shouldFindAllCoursesInModel() throws Exception {
+        Collection<Review> allReviewsInModel = Arrays.asList(reviewOne, reviewTwo);
+        when(reviewRepo.findAll()).thenReturn(allReviewsInModel);
+        mockMvc.perform(get("/reviews")).andExpect(model().attribute("reviewsModel", allReviewsInModel));
+    }
+
+    @Test
+    public void shouldBeOkForOneReviewInTheReviewsTemplate() throws Exception {
+        mockMvc.perform(get("/review?id=1")).andExpect(status().isOk())
+                .andExpect(view().name("reviewTemplate"));
+    }
+
+    @Test
+    public void shouldFindReviewOneInModel() throws Exception {
+        Long reviewOneId = 1L;
+        when(reviewRepo.findOne(reviewOneId)).thenReturn(reviewOne);
+        mockMvc.perform(get("/review?id=1")).andExpect(model().attribute("reviewModel", reviewOne));
     }
 
 }

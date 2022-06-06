@@ -16,12 +16,13 @@ public class ReviewController {
 
     @RequestMapping("/reviews")
     public String findAllReviews(Model model){
-        model.addAttribute("coursesModel", reviewRepo.findAll());
+        model.addAttribute("reviewsModel", reviewRepo.findAll());
         return "reviewsTemplate";
     }
 
     @RequestMapping("/review")
-    public String findOneReview(@RequestParam(value = "id") Long id){
+    public String findOneReview(@RequestParam(value="id") Long id, Model model) {
+        model.addAttribute("reviewModel", reviewRepo.findOne(id));
         return "reviewTemplate";
     }
 
