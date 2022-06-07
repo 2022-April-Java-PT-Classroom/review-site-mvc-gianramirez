@@ -1,10 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title th:text="${reviewModel.title}">A Review</title>
 </head>
 <body>
 
+    <header>
+        <h1 th:text="${reviewModel.title}">A Review</h1>
+    </header>
+
+<main>
+    <ul>
+        <p><a href="/reviews">Reviews</a></p>
+        <li th:text="${reviewModel.title}"></li>
+    </ul>
+</main>
+
+<footer>
+    <small>&copy Gian Ramirez 2022</small>
+</footer>
+
 </body>
+
 </html>

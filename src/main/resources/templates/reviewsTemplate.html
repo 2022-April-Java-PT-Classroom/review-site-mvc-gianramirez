@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>A List Of All Available Reviews</title>
 </head>
 <body>
+
+<header>
+    <h1>A List Of All Reviews</h1>
+</header>
+
+<main>
+    <ul>
+        <li th:each="review: ${reviewsModel}"><a th:href="@{/review(id=${review.id})}" th:text="${review.name}"></a></li>
+    </ul>
+</main>
+
+<footer>
+    <small>&copy Gian Ramirez 2022</small>
+</footer>
 
 </body>
 </html>
