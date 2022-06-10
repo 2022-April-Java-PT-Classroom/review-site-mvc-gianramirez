@@ -4,14 +4,14 @@
 
 * {
     font-family: 'Roboto', sans-serif;
-    background-color: #FBEEC1;
-    
+    background-color: #fbeec1;
 }
 
 body {
     margin: 0;
     text-align: left;
     font-family: 'Roboto', sans-serif;
+    color: #black;
   }
 
 
@@ -20,10 +20,10 @@ body {
     height 250px;
  }
 
- p {
-    text-align: right;
- }
+p {
+color: #black;
+}
 
- h3 {
-    text-align: right;
- }
+h3 {
+color: #black;
+}
