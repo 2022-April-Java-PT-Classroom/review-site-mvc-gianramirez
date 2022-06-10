@@ -16,13 +16,13 @@ public class Review {
     private String content;
     private String country;
 
-    public Review(Long id, String title, String imageUrl, String reviewCategory, String content, String country) {
+    public Review(Long id, String title, String imageUrl, String reviewCategory, String country, String content) {
         this.id = id;
         this.title = title;
         this.imageUrl = imageUrl;
         this.reviewCategory = reviewCategory;
-        this.content = content;
         this.country = country;
+        this.content = content;
     }
 
     public Review() {
@@ -44,12 +44,14 @@ public class Review {
         return reviewCategory;
     }
 
+    public String getCountry() {
+        return country;
+    }
+
     public String getContent() {
         return content;
     }
 
-    public String getCountry() {
-        return country;
-    }
+
 
 }

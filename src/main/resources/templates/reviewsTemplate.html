@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org" lang="en">
 <head>
+    <link rel="stylesheet" href="/style.css"/>
     <meta charset="UTF-8">
     <title>A List Of All Available Reviews</title>
 </head>
@@ -12,7 +13,7 @@
 
 <main>
     <ul>
-        <li th:each="review: ${reviewsModel}"><a th:href="@{/review(id=${review.id})}" th:text="${review.name}"></a></li>
+        <li th:each="review: ${reviewsModel}"><a th:href="@{/review(id=${review.id})}" th:text="${review.title}"></a></li>
     </ul>
 </main>
 
