@@ -3,17 +3,19 @@
 <head>
     <link rel="stylesheet" href="/style.css"/>
     <meta charset="UTF-8">
-    <title>A List Of All Available Reviews</title>
+    <title>A List Of Cigar Reviews</title>
 </head>
 <body>
 
 <header>
-    <h1>A List Of All Reviews</h1>
+    <img class="humidity" src="/images/humidity-cigars.png" alt="Humidity Cigars Logo">
+    <h1>Cigar Reviews</h1>
 </header>
 
 <main>
+
     <ul>
-        <li th:each="review: ${reviewsModel}"><a th:href="@{/review(id=${review.id})}" th:text="${review.title}"></a></li>
+        <li th:each="review: ${reviewsModel}"><button><a th:href="@{/review(id=${review.id})}" th:text="${review.title}"></a></button></li>
     </ul>
 </main>
 

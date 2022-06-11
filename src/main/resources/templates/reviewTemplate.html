@@ -8,17 +8,20 @@
 <body>
 
     <header>
-        <h1 th:text="${reviewModel.title}">A Review</h1>
+        <h1 th:text="${reviewModel.title}">A Cigar Review</h1>
     </header>
 
 <main>
     <ul>
-        <p><a href="/reviews">Reviews</a></p>
         <img th:src="${reviewModel.imageUrl}">
         <h3 th:text="${reviewModel.reviewCategory}"></h3>
         <h3 th:text="${reviewModel.country}"></h3>
         <p th:text="${reviewModel.content}"></p>
     </ul>
+
+    <p><a href="/reviews">Back to Cigars</a></p>
+    <p><a href="/">Home</a></p>
+
 </main>
 
 <footer>
