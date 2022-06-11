@@ -49,6 +49,8 @@ public class ReviewControllerMvcTest {
 
     @Test
     public void shouldBeOkForOneReviewInTheReviewsTemplate() throws Exception {
+        Long reviewOneId = 1L;
+        when(reviewRepo.findOne(reviewOneId)).thenReturn(reviewOne);
         mockMvc.perform(get("/review?id=1")).andExpect(status().isOk())
                 .andExpect(view().name("reviewTemplate"));
     }
