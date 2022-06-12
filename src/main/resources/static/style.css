@@ -1,0 +1,87 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+</style>
+
+* {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0ece2;
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0ece2;
+    color: black;
+    text-align: center;
+}
+
+a {
+color: black;
+size: large;
+text-align: center;
+}
+
+img {
+    width: 250px;
+    height: 250px;
+    text-align: center;
+}
+
+.humidity {
+    width: 450px;
+    height: 350px;
+    padding: 0;
+}
+
+p {
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.index {
+    padding-top: 5%;
+}
+
+h1 {
+    padding-top: 0.5%;
+}
+
+h3 {
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+ul {
+    border-color: #3c2613;
+    text-align: center;
+}
+
+button {
+    background-color: #c7b198;
+    color: white;
+    width: 20%;
+    font-size: medium;
+}
+
+button a {
+    color: black;
+}
+
+button a:hover {
+background-color: #c7b198;
+color: #596e79;
+}
+
+
+li {
+
+    text-align: center;
+    list-style-type: none;
+    flex-wrap: wrap;
+}
+
+footer {
+    text-align: center;
+    padding-top: 15%;
+}
